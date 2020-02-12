@@ -45,7 +45,7 @@ void user_parse(char tmp[1024]) {
      **/
     sprintf(cmd, "sudo groupadd %s && sudo useradd %s -u %s -p $(echo -n $s | openssl dgst -sha512 -binary | xxd -p) -G %s -c \"%s\" -d %s -s %s",
                         buffer[2], buffer[0], buffer[1], 
-						buffer[6], buffer[2], buffer[3],
+			buffer[6], buffer[2], buffer[3],
                         buffer[4], buffer[5]);
     system(cmd);
     free(cmd);
