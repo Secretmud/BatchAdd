@@ -25,13 +25,13 @@ int main(int argc, char * argv[]) {
 
 void user_parse(char tmp[1024]) {
     char buffer[10][1024];
-    const char * pass = "PASSWORD";
+    const char * delimeter = ":";
     char * cmd = (char * )malloc(sizeof buffer);
-    char * token = strtok(tmp, ":");
+    char * token = strtok(tmp, delimeter);
     int x = 0;
     while (token != NULL) {
         strcpy(buffer[x], token);
-        token = strtok(NULL, ":");
+        token = strtok(NULL, delimeter);
         x++;
     }
     /*
@@ -43,9 +43,9 @@ void user_parse(char tmp[1024]) {
      * buffer[5] = SHELL
      * buffer[6] = PASSWORD
      **/
-    sprintf(cmd, "sudo groupadd %s && sudo useradd %s -u %s -p $(openssl dgst -sha512 <<< %s) -G %s -c \"%s\" -d %s -s %s",
+    sprintf(cmd, "sudo groupadd %s && sudo useradd %s -u %s -p $(echo -n $s | openssl dgst -sha512 -binary | xxd -p) -G %s -c \"%s\" -d %s -s %s",
                         buffer[2], buffer[0], buffer[1], 
-						buffer[6], buffer[2], buffer[3],  
+						buffer[6], buffer[2], buffer[3],
                         buffer[4], buffer[5]);
     system(cmd);
     free(cmd);
