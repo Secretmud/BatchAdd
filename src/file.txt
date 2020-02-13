@@ -1,8 +1,8 @@
 user1:6001:grp1:This is user1:/home/user1:/bin/bash:veeg9eip
-user2:6002:grp2:This is user2:/home/user2:/bin/dash:Veigh9ai
-user3:6003:grp3:This is user3:/home/user3:/usr/bin/fish:shaChup4
+user2:6002:grp2:This is user2:/home/user2:/bin/bash:Veigh9ai
+user3:6003:grp3:This is user3:/home/user3:/bin/bash:shaChup4
 user4:6004:grp4:This is user4:/home/user4:/bin/bash:gi9aeNg4
-user5:6005:grp5:This is user5:/home/user5:/usr/bin/fish:Eeg3ua7r
+user5:6005:grp5:This is user5:/home/user5:/bin/bash:Eeg3ua7r
 user6:6006:grp6:This is user6:/home/user6:/bin/bash:ohneiTe3
-user7:6007:grp7:This is user7:/home/user7:/bin/false:phoi7ieC
-user8:6008:grp8:This is user8:/home/user8:/bin/sh:To3hah7U
+user7:6007:grp7:This is user7:/home/user7:/bin/bash:phoi7ieC
+user8:6008:grp8:This is user8:/home/user8:/bin/bash:To3hah7U

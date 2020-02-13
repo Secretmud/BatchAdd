@@ -49,7 +49,7 @@ void user_parse(char tmp[1024]) {
      *
      * Need to find a better way of hashing(Looking into openssl/sha.h) below is the two current versions I've tested	
      * 		mkpasswd -m sha-512 %s
-     * 		echo -n \"%s\" | openssl dgst -sha512 -binary | xxd -p
+     * 		
      **/
     sprintf(cmd, "sudo groupadd %s && sudo useradd %s -u %s -p $(mkpasswd -m sha-512 %s) -G %s -c \"%s\" -d %s -s %s",
                         buffer[2], buffer[0], buffer[1], 
