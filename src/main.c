@@ -40,12 +40,12 @@ void user_parse(char tmp[1024]) {
     }
     /*
      * buffer[0] = USERNAME
-     * buffer[1] = UUID
-     * buffer[2] = GROUP
-     * buffer[3] = USER COMMENT
-     * buffer[4] = HOME DIR
-     * buffer[5] = SHELL
-     * buffer[6] = PASSWORD
+     * -u buffer[1] = UUID
+     * -G buffer[2] = GROUP
+     * -c buffer[3] = USER COMMENT
+     * -d buffer[4] = HOME DIR
+     * -s buffer[5] = SHELL
+     * -p buffer[6] = PASSWORD
      *
      * Need to find a better way of hashing(Looking into openssl/sha.h) below is the two current versions I've tested	
      * 		mkpasswd -m sha-512 %s
@@ -53,7 +53,7 @@ void user_parse(char tmp[1024]) {
      **/
     sprintf(cmd, "sudo groupadd %s && sudo useradd %s -u %s -p $(mkpasswd -m sha-512 %s) -G %s -c \"%s\" -d %s -s %s",
                         buffer[2], buffer[0], buffer[1], 
-			buffer[6], buffer[2], buffer[3],
+                        buffer[6], buffer[2], buffer[3],
                         buffer[4], buffer[5]);
     system(cmd);
     free(cmd);
