@@ -1,6 +1,10 @@
 # BatchAdd
 
-Adding new users in batches using C
+Adding new users in batches using C.
+
+### Requirements 
+
+mkpasswd
 
 ## File layout 
 
